@@ -27,10 +27,10 @@ void printLight();
 //============================================
 
 //motors IOs  ---------------------------
-int Motor_right_PWM = 10;      // D10 for PWM (0 min -255 max)
-int Motor_right_direction = 5; // D5 for Direction 0 Forward - 1 Reverse
-int Motor_left_PWM = 9;        // D9 for PWM  
-int Motor_left_direction = 6;  // D6 for Direction
+int Motor_left_PWM = 10;      // D10 for PWM (0 min -255 max)
+int Motor_left_direction = 5; // D5 for Direction 0 Forward - 1 Reverse
+int Motor_right_PWM = 9;        // D9 for PWM  
+int Motor_right_direction = 6;  // D6 for Direction
 int left_speed=40;             // Initial speed for left motor 
 int right_speed=40;             // Initial speed for right motor 
 #define Forward 0              // Direction code
@@ -45,11 +45,11 @@ int Module_LED = 11;  //D11 for Light Module LED
 
 //Infra-Red -----------------------------
 int IR_enable=4;       // D4 for IR Emitters
-#define IR_right_sensor       A3   // Analog port 
-#define IR_right_front_sensor A2
+#define IR_right_sensor       A7   // Analog port 
+#define IR_right_front_sensor A0
 #define IR_front_sensor       A1
-#define IR_left_front_sensor  A0
-#define IR_left_sensor        A7
+#define IR_left_front_sensor  A2
+#define IR_left_sensor        A3
 #define ON   1
 #define OFF  0
 int IR_threshold= 950; // 0 white close obstacle -- 1023 no obstacle
@@ -209,7 +209,7 @@ void BEECLUST(){
 
 void loop() {
   // put your main code here, to run repeatedly:
-
   // move robot forward
    motors( left_speed , Forward , right_speed , Forward);
+   obstacle_avoidance(1);
 }
