@@ -2,12 +2,11 @@
 // The code has four sections: 
 //  1) Variables/constant/parameters 
 //  2) Control library for motion, sensory system, and other IOs
-//  3) Setup() (Line 178) function for initialisation of modules   
+//  3) Setup() (Line 173) function for initialisation of modules   
 //  4) Loop() (line 200) function which users will write their code in
 
 
 // List of all functions:
-
 
 void motors(int left, int left_dir, int right, int right_dir);
 void turn(int turning_direction, int turning_speed, int turning_delay);
